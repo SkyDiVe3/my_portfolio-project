@@ -16,7 +16,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+# imported static function and settings file
+from django.conf.urls.static import static
+from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
 ]
+
+#Assignning static parameters to media folder to preview images straight from database
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
