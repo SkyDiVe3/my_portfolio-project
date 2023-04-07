@@ -19,9 +19,11 @@ from django.urls import path
 # imported static function and settings file
 from django.conf.urls.static import static
 from django.conf import settings
-
+# import views from portfolio
+from portfolio import views
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', views.home, name='home'),
 ]
 
 #Assignning static parameters to media folder to preview images straight from database
