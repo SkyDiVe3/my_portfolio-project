@@ -1,7 +1,10 @@
 Hello Blog
 
 {%for blog in blogs%}
-    <h1>{{blog.title}}</h1>
+    <!-- This particularry a tag has a link to the blog app urls path with its NAME 'detail', so then someone
+         clicks on the title it will pass to the path the id of the blog from the module
+    -->
+    <a href="{%url 'blog:detail' blog.id%}"><h1>{{blog.title}}</h1></a>
     <h5>{{blog.post_date}}</h5>
     <p>{{blog.description}}</p> 
 
