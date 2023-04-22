@@ -1,1 +1,4 @@
-<p>{{blog.title}}</p>
+<h1>{{blog.title}}</h1>
+<!--This date customization adds a suffix for the date number "th" or "nd" -->
+<h2>--{{blog.post_date|date:'F jS Y'}}--</h2>
+{{blog.description|safe}}

@@ -1,11 +1,23 @@
 Hello Blog
+{% load static %}
 
+<!--Django Pluralize function/filter is adding a plural ending for a word if it's more than one or less
+    u can write pluralize:'editedEnding' to edit the ending from 's' to something u want
+-->
+<h2>Mike has written {{blogs.count}} blog{{blogs.count|pluralize}}</h2>
+<br>
 {%for blog in blogs%}
-    <!-- This particularry a tag has a link to the blog app urls path with its NAME 'detail', so then someone
+    <!-- This particularly a tag has a link to the blog app urls path with its NAME 'detail', so then someone
          clicks on the title it will pass to the path the id of the blog from the module
     -->
     <a href="{%url 'blog:detail' blog.id%}"><h1>{{blog.title}}</h1></a>
-    <h5>{{blog.post_date}}</h5>
-    <p>{{blog.description}}</p> 
+    <br>
+    <!--We can customize our entris by giving some tags as date formatting-->
+    <h5>{{blog.post_date|date:'M d Y'|upper}}</h5>
+    <br>
+    <!--Also we can customize our string concatenation by using django built in methods and filters:
+        to use html tags in our text we use first |safe, or if we dont want to see any html tags |striptags
+    -->
+    <p>{{blog.description|truncatechars:100}}</p>
 
 {%endfor%}

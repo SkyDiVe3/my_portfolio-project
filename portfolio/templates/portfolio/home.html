@@ -1,4 +1,8 @@
+{% load static %}
+
 <h1>Mikes Portfolio</h1>
+<br>
+<a href="{%url 'blog:all_blogs'%}">Blog</a>
 
 <!--To import information from views we use keyVarName like input in double square brackets: -->
 <!--{{projects}}-->
@@ -6,11 +10,13 @@
     {% for .. in .. %}
     {% endfor %}
  -->
+    <br>
 
 
-<!--To load static files enter the django command :-->
-{% load static %}
-<img src="{%static 'portfolio/face_II.jpg'%}" alt="Another AI face portrait">
+    <!--To load static files enter the django command :-->
+
+    <div style=""><img src="{%static 'portfolio/face_II.jpg'%}" alt="Another AI face portrait"></div>
+    <br>
 
     {% for project in projects %}
         <h2>{{project.title}}</h2>
