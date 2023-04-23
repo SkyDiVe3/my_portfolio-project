@@ -1,15 +1,17 @@
-{% load static %}
+    {% extends 'portfolio/base.html'%}
+    {% block content%}
+    {% load static %}
 
-<h1>Mikes Portfolio</h1>
-<br>
-<a href="{%url 'blog:all_blogs'%}">Blog</a>
+    <h1>Mikes Portfolio</h1>
+    <br>
+    <a href="{%url 'blog:all_blogs'%}">Blog</a>
 
-<!--To import information from views we use keyVarName like input in double square brackets: -->
-<!--{{projects}}-->
-<!--But if we have some logic to implement then extracting information(loops, cases..), we need to use
-    {% for .. in .. %}
-    {% endfor %}
- -->
+    <!--To import information from views we use keyVarName like input in double square brackets: -->
+    <!--{{projects}}-->
+    <!--But if we have some logic to implement then extracting information(loops, cases..), we need to use
+        {% for .. in .. %}
+        {% endfor %}
+     -->
     <br>
 
 
@@ -27,4 +29,6 @@
             <br><a href="{{project.url}}" target="_blank">Link</a>
         {% endif%}
     {% endfor %}
+
+    {% endblock %}
 
