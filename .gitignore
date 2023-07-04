@@ -9,7 +9,16 @@
 __pycache__ 
 db.sqlite3 
 media 
- 
+
+### Django.Python Stack ###
+# Byte-compiled / optimized / DLL files
+*.py[cod]
+*$py.class
+
+# If your build process includes running collectstatic, then you probably don't need or want to include staticfiles/
+# in your Git repository. Update and uncomment the following line accordingly.
+*/staticfiles/
+
 # Backup files #  
 *.bak  
  
@@ -131,6 +140,26 @@ Control.ca-list
 Control.ca-bundle  
 Control.system-ca-bundle  
 GitHub.sublime-settings  
+
+### VisualStudioCode ###
+.vscode/*
+.vs/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+
+# Local History for Visual Studio Code
+.history/
+
+# Built Visual Studio Code Extensions
+*.vsix
+
+### VisualStudioCode Patch ###
+# Ignore all local history of files
+.history
+.ionide
  
 
 my_portfolio/settings.py
